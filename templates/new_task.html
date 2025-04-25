@@ -1,38 +1,26 @@
 <!-- templates/new_task.html -->
-{% extends "base.html" %}
+{% extends 'base.html' %}
+
+{% block title %}New Task{% endblock %}
 
 {% block content %}
-<h1>New Task for {{ project.title }}</h1>
+<h2>Add a New Task</h2>
 <form method="POST">
-    <div class="mb-3">
-        <label for="title" class="form-label">Task Title</label>
-        <input type="text" class="form-control" id="title" name="title" required>
-    </div>
-    <div class="mb-3">
-        <label for="description" class="form-label">Description</label>
-        <textarea class="form-control" id="description" name="description" rows="3"></textarea>
-    </div>
-    <div class="mb-3">
-        <label for="status" class="form-label">Status</label>
-        <select class="form-select" id="status" name="status" required>
-            <option value="todo">To Do</option>
-            <option value="in_progress">In Progress</option>
-            <option value="completed">Completed</option>
-        </select>
-    </div>
-    <div class="mb-3">
-        <label for="priority" class="form-label">Priority</label>
-        <select class="form-select" id="priority" name="priority" required>
-            <option value="Low">Low</option>
-            <option value="Medium">Medium</option>
-            <option value="High">High</option>
-            <option value="Urgent">Urgent</option>
-        </select>
-    </div>
-    <div class="mb-3">
-        <label for="due_date" class="form-label">Due Date</label>
-        <input type="date" class="form-control" id="due_date" name="due_date">
-    </div>
-    <button type="submit" class="btn btn-primary">Create Task</button>
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" required>
+
+    <label for="description">Description:</label>
+    <textarea id="description" name="description"></textarea>
+
+    <label for="status">Status:</label>
+    <input type="text" id="status" name="status">
+
+    <label for="priority">Priority:</label>
+    <input type="text" id="priority" name="priority">
+
+    <label for="due_date">Due Date:</label>
+    <input type="date" id="due_date" name="due_date">
+
+    <button type="submit">Add Task</button>
 </form>
 {% endblock %}
